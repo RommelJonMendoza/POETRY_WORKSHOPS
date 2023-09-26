@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pluma Inc.</title>
+		<link rel="stylesheet" type="text/css" href="registration.css">
+		<link rel="icon" type="image/x-icon" href="realLogo.png">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	</head>
+	<body>
+		<div class = "wrapper">
+			<form action = "index.html">
+				<h1>Register</h1>
+				<div class="input-box">
+					<input type="text" placeholder="Name" required>
+					<i class='bx bx-user-circle'></i>
+				</div>
+
+				<div class="input-box">
+					<input type="text" placeholder="Email" required>
+					<i class='bx bx-envelope'></i>
+				</div>
+
+				<div class="custom-select" style="width:100%; height: 41px;">
+				<select required>
+						 <option value="">Choose a center:</option>
+						 <option value="1">Cabanatuan</option>
+						 <option value="2">Manila</option>
+						 <option value="3">Pampanga</option>
+				</select> 
+			    </div>
+			    </br>
+				
+			    
+
+				<p style = "text-align: center; font-family:'Poppins', sans-serif; color: white;
+				font-size: 16px; margin-top: 0px; margin-bottom: 5px;">Are you a member?</p>
+				
+				<input type="radio" name="member" value="yes" id="yes" required>
+				<label for="yes">Yes</label></br> 				
+				<input type="radio" name="member" value="no" id="no" required> 
+				<label for="no">No</label>
+			    </br>
+
+
+				<button type="submit" class="btn"> Register </button>
+
+			</form>
+		</div>
+		<script>
+var x, i, j, l, ll, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+document.addEventListener("click", closeAllSelect);
+</script>
+	</body>
+
+</html>

@@ -1,0 +1,112 @@
+@font-face {
+		font-family: myFont;
+		src:url(Lfont.otf)
+}
+
+@font-face {
+		font-family: myFont2;
+		src:url(brand.ttf)
+}
+
+body {
+		width: 95%;
+		margin: 0 auto;
+		background-image: url(nbg.jpg);
+		background-size: cover;
+		background-position: center ;
+}
+.wrapper {
+		background: rgba(255, 255, 255, .2);
+		border-radius: 20px;
+}
+.header {
+		height: 7em;
+		margin: 1em 0 0 0;
+		padding: 1em;
+		overflow: auto;
+}
+.logo {
+		float: left;
+		height: 5em;
+		margin-top: .8em;
+		margin-left: 1em;
+}
+.header p{
+		font-family: myFont;
+		font-size: 3em;
+		color: black;
+		margin-top: .5em;
+		float: left;
+		margin-right: 1em;
+}
+.header a{
+		float: right;
+		font-family: myFont2;
+		font-size: 1.5em;
+		margin-right: 1em;
+		color: black;
+		text-decoration: none;
+		margin-top: 1.8em;
+}
+.header a:active{
+		color: #7F7E7E;
+}
+.header a:hover {
+ 		text-decoration: underline;
+}
+.header a.active {
+ 		color: #7B452F;
+ 		text-shadow: 2px 2px 5px rgba(0, 0, 0, .4);
+}
+.content {
+		height: 30em ;
+		margin-bottom: .8em;
+		overflow: auto;
+}
+.content h1{
+		font-size: 5.5em;
+		font-family: myFont2;
+		max-width: 50%;
+		margin-top: 5%;
+		margin-left: 9%;
+		margin-bottom: 0;
+		margin-right: 5%;
+}
+.content p{
+		font-size: 2em;
+		font-family: Times New Roman;
+		max-width: 40%;
+		margin-left: 9%;
+		margin-top: 0;
+		margin-right: 5%;
+}
+.content img {
+		height: 440px ;
+		width: 400px ;
+		display: block;
+		float: right;
+		margin-right: 6%;
+		margin-top: 2%;
+		margin-left: 6%;
+}
+.footer {
+		height: 4.2em;
+		background: rgba(255, 255, 255, .2);
+		border-radius: 20px 20px 0px 0px;
+}
+.footer p{
+		font-family: myFont2;
+		size: 1em;
+		text-align: center;
+		margin: 0;
+}
+.footer a {
+		text-decoration: none;
+		color: black;
+}
+.footer a:active{
+		color: #7F7E7E;
+}
+.footer a:hover {
+		text-decoration: underline;
+}
